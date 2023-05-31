@@ -21,7 +21,7 @@ namespace ConsoleApp1
             string[] darabok = sor.Split(';');
             this.év = darabok[0];
             this.név= darabok[1];
-            this.vegyjel = darabok[2];
+            this.vegyjel = darabok[2].ToLower();
             this.rendszam = Convert.ToInt32(darabok[3]);
             this.felfedezo = darabok[4];
         }

@@ -27,6 +27,42 @@ namespace ConsoleApp1
                     okor++;
                 }
                 Console.WriteLine("4. feladat: Felfedezések száma az ókorban: "+okor);
+                string bekert;
+                do
+                {
+                    Console.WriteLine("5. feladat: Kérek egy vegyjelet!: ");
+                    bekert = Console.ReadLine();
+                } while (bekert.Length > 2);
+
+
+
+
+
+                if (lista.Exists(x=>x.vegyjel==bekert.ToLower()))
+                {
+                    Console.WriteLine("6. feladat: Keresés");
+                    foreach (var elemek in lista.Where(x=>x.vegyjel==bekert.ToLower()))
+                    {
+                        Console.WriteLine($"\tAz elem vegyjele: {elemek.vegyjel}");
+                        Console.WriteLine($"\tAz elem neve: {elemek.név}");
+                        Console.WriteLine($"\tRendszáma: {elemek.rendszam}");
+                        Console.WriteLine($"\tFelfedezés éve: {elemek.év}");
+                        Console.WriteLine($"\tFelfedező: {elemek.felfedezo}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Nincs ilyen elem az adatforrásban!");
+                }
+
+                foreach (var evek in lista.Where(x=>x.év!="Ókor"))
+                {
+
+                }
+
+                
+
+
             }
 
         }
